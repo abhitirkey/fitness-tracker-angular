@@ -1,0 +1,26 @@
+<section class="login-form-section">
+    <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+        <mat-form-field>
+            <input
+            matInput
+            type="email"
+            placeholder="email"
+            formControlName="email"
+            required
+            >
+            <mat-error>This field is required.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+            matInput
+            type="password"
+            placeholder="password"
+            formControlName="password"
+            required
+            minlength="6"
+            >
+            <mat-error>Invalid Password</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+</section>

@@ -1,0 +1,7 @@
+.signup-form-section form {
+    height: 100vh;
+}
+
+mat-form-field {
+    width: 300px;
+}
