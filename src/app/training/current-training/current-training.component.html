@@ -2,5 +2,6 @@
     <mat-spinner mode="determinate" [value]="progressValue"></mat-spinner>
     <h2>Progress: {{ progressValue }}%</h2>
     <button mat-raised-button (click)="pauseTimer()" *ngIf="!timerStopped">Pause</button>
-    <button mat-raised-button (click)="startTimer()" *ngIf="timerStopped">Start</button>
+    <button mat-raised-button (click)="startTimer()" *ngIf="timerStopped && progressValue < 100">Start</button>
+    <button mat-raised-button (click)="onQuitTraining.emit()" *ngIf="timerStopped && progressValue === 100">Start again</button>
 </section>
